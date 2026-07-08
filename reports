@@ -1,0 +1,157 @@
+Top level modules:
+	tb_riscv_scoreboard
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+End time: 02:58:57 on Jul 08,2026, Elapsed time: 0:00:02
+Errors: 0, Warnings: 0
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 02:58:57 on Jul 08,2026
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	tb_riscv_scoreboard
+
+Analyzing design...
+-- Loading module tb_riscv_scoreboard
+-- Loading module riscv_pipeline
+-- Loading module pc
+-- Loading module instr_mem
+-- Loading module if_id
+-- Loading module hazard_detection_unit
+-- Loading module control_unit
+-- Loading module reg_file
+-- Loading module imm_gen
+-- Loading module id_ex
+-- Loading module forwarding_unit
+-- Loading module alu_control
+-- Loading module alu
+-- Loading module ex_mem
+-- Loading module branch_unit
+-- Loading module data_mem
+-- Loading module mem_wb
+Optimizing 17 design-units (inlining 0/17 module instances):
+-- Optimizing module tb_riscv_scoreboard(fast)
+-- Optimizing module riscv_pipeline(fast)
+-- Optimizing module id_ex(fast)
+-- Optimizing module control_unit(fast)
+-- Optimizing module ex_mem(fast)
+-- Optimizing module alu(fast)
+-- Optimizing module imm_gen(fast)
+-- Optimizing module forwarding_unit(fast)
+-- Optimizing module reg_file(fast)
+-- Optimizing module mem_wb(fast)
+-- Optimizing module alu_control(fast)
+-- Optimizing module branch_unit(fast)
+-- Optimizing module if_id(fast)
+-- Optimizing module hazard_detection_unit(fast)
+-- Optimizing module data_mem(fast)
+-- Optimizing module pc(fast)
+-- Optimizing module instr_mem(fast)
+Optimized design name is qrun_opt
+End time: 02:58:58 on Jul 08,2026, Elapsed time: 0:00:01
+Errors: 0, Warnings: 1
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 02:58:58 on Jul 08,2026
+# Loading /tmp/root@b06759bf41a1_dpi_34/linux_x86_64_gcc-11/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.tb_riscv_scoreboard(fast)
+# Loading work.riscv_pipeline(fast)
+# Loading work.pc(fast)
+# Loading work.instr_mem(fast)
+# Loading work.if_id(fast)
+# Loading work.hazard_detection_unit(fast)
+# Loading work.control_unit(fast)
+# Loading work.reg_file(fast)
+# Loading work.imm_gen(fast)
+# Loading work.id_ex(fast)
+# Loading work.forwarding_unit(fast)
+# Loading work.alu_control(fast)
+# Loading work.alu(fast)
+# Loading work.ex_mem(fast)
+# Loading work.branch_unit(fast)
+# Loading work.data_mem(fast)
+# Loading work.mem_wb(fast)
+# ** Note: (vsim-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+# Loading /tmp/root@b06759bf41a1_dpi_34/linux_x86_64_gcc-11/vsim_auto_compile.so
+# 
+# run -all
+# 
+#   PIPELINE MONITOR ? write-back events
+#   TIME(ns)    RD    WB_DATA   
+#   76000       x1    0x0000000a
+#   86000       x2    0x00000005
+#   96000       x3    0x0000000f
+#   106000      x4    0x00000005
+#   116000      x5    0x0000000a
+#   126000      x6    0x00000000
+#   136000      x7    0x0000000f
+#   146000      x8    0x00000140
+#   156000      x9    0x0000000a
+#   166000      x10   0x00000001
+#   186000      x11   0x00000005
+#   206000      x12   0x0000000f
+#   256000      x13   0x12345140
+#   266000      x14   0x54321005
+#   276000      x15   0x00000140
+#   286000      x16   0x00000000
+#   296000      x17   0x0000000a
+#        SCOREBOARD ? REGISTER FILE CHECK                  
+#   STATUS  REG     ACTUAL        EXPECTED    
+#   PASS  x1     actual = 0000000a    expected = 0000000a
+#   PASS  x2     actual = 00000005    expected = 00000005
+#   PASS  x3     actual = 0000000f    expected = 0000000f
+#   PASS  x4     actual = 00000005    expected = 00000005
+#   PASS  x5     actual = 0000000a    expected = 0000000a
+#   PASS  x6     actual = 00000000    expected = 00000000
+#   PASS  x7     actual = 0000000f    expected = 0000000f
+#   PASS  x8     actual = 00000140    expected = 00000140
+#   PASS  x9     actual = 0000000a    expected = 0000000a
+#   PASS  x10    actual = 00000001    expected = 00000001
+#   PASS  x11    actual = 00000005    expected = 00000005
+#   PASS  x12    actual = 0000000f    expected = 0000000f
+#   PASS  x13    actual = 12345140    expected = 12345140
+#   PASS  x14    actual = 54321005    expected = 54321005
+#   PASS  x15    actual = 00000140    expected = 00000140
+#   PASS  x16    actual = 00000000    expected = 00000000
+#   PASS  x17    actual = 0000000a    expected = 0000000a
+#        FUNCTIONAL COVERAGE REPORT                        
+#   cg_opcode  (instruction types)   : 100.0%
+#   cg_forwarding (fwd paths)        :  85.2%
+#   cg_pipeline_ctrl (stall/flush)   : 100.0%
+#   cg_alu_ops (ALU operations)      : 100.0%
+#   AGGREGATE                        :  96.3%
+#        TEST SUMMARY                                       
+#   Scoreboard checks  PASS : 17 / 17
+#   Scoreboard checks  FAIL : 0 / 17
+#   >>> ALL 17 REGISTER CHECKS PASSED <<<
+# 
+# ** Note: $finish    : testbench.sv(254)
+#    Time: 535 ns  Iteration: 1  Instance: /tb_riscv_scoreboard
+# End time: 02:59:00 on Jul 08,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+End time: 02:59:00 on Jul 08,2026, Elapsed time: 0:00:06
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   0
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   1
+Finding VCD file...
+./tb_riscv_scoreboard.vcd
